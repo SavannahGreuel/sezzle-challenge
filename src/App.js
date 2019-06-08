@@ -61,7 +61,7 @@ class App extends Component {
 
         axios
             .post("http://localhost:9000/user/calculations", newInput)
-git             .then(res => {
+            .then(res => {
                 console.log("Adding input", res);
                 // this.setState({calculations: res.data})
             })
