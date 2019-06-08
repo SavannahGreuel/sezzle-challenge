@@ -5,7 +5,7 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './dev.sqlite3'
+      host: "https://guarded-hamlet-96437.herokuapp.com/"
     },
     useNullAsDefault: true,
     migrations: {
