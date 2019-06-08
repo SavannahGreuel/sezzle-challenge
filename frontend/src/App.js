@@ -3,10 +3,12 @@ import Display from './components/Display/Display';
 import Panel from './components/Panel/Panel';
 import calculate from './logic/calculate';
 import './App.css';
-import User from './components/User/User'
-import UserHistory from './components/User History/userHistory';
+// import User from './components/User/User'
+// import UserHistory from './components/User History/userHistory';
 import Calculation from './components/User History/Calculation';
 import axios from 'axios';
+
+const URL = 'https://guarded-hamlet-96437.herokuapp.com'
 
 class App extends Component {
     constructor(props) {
@@ -25,7 +27,7 @@ class App extends Component {
     
     componentDidMount () {
         axios
-        .get('http://localhost:9000/calculations')
+        .get(`${URL}/calculations`)
         .then(response => {
             console.log(response);
             this.setState({calculations: response.data})
@@ -60,7 +62,7 @@ class App extends Component {
         }
 
         axios
-            .post("http://localhost:9000/user/calculations", newInput)
+            .post(`${URL}/user/calculations`, newInput)
             .then(res => {
                 console.log("Adding input", res);
                 // this.setState({calculations: res.data})
