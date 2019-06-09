@@ -3,4 +3,88 @@
     flex-direction: column;
     flex-wrap: wrap;
     height: 100%;
+    
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 65%;
+    height: 300px;
+    justify-content: center;
+    align-content: center;
+    vertical-align: middle;
+}
+.leaderBoard {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 21px;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    /* width: 70%; */
+
+}
+
+.selection {
+    display: flex;
+    width: 40%;
+    margin: 0px 10px 0px 0px;
+    height: 30px;
+    font-size: 16px;
+    padding: 5px;
+    
+}
+::placeholder {
+    color: rgb(131, 131, 131); 
+    font-size: 16px;
+    padding: 5px;
+}
+
+.submit-button {
+    height:30px;
+    display: flex;
+    background-color:  #F5923E;
+    border-style: none;
+    color:white;
+    margin: 0px 0px 0px 0px;
+    height: 43px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.calculations {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    padding: 10px 0px 0px 0px;
+    font-weight: normal;
+}
+
+.leader-card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid rgb(86, 105, 70);
+    color: white;
+}
+
+.individual {
+    margin: 0px 20px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+    flex-wrap: wrap;
+ 
+
 }

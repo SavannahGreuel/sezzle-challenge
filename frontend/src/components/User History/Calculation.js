@@ -3,10 +3,10 @@ import React from 'react';
 
 const Calculation = props => {
     return (
-        <div >
+        <div className = "leader-card">
             
                 <h3 className = 'noteCardTitle '> {props.name} </h3>
-                <p>{props.number}</p>
+                <p className = 'number'>{props.number}</p>
                 
             
 
