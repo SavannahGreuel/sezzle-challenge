@@ -16,7 +16,7 @@ const db = require('./data/dbConfig')
 const io = socketIO(server)
 
 
-// app.use(express.json());
+app.use(express.json());
 app.use(cors());
 
 // sanity check endpoint
