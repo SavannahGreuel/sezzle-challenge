@@ -3,6 +3,7 @@ import Display from './components/Display/Display';
 import Panel from './components/Panel/Panel';
 import calculate from './logic/calculate';
 import './App.css';
+import socketIOClient from 'socket.io-client'
 // import User from './components/User/User'
 // import UserHistory from './components/User History/userHistory';
 import Calculation from './components/User History/Calculation';
@@ -19,22 +20,26 @@ class App extends Component {
             operation: null,
             nameValue: '',
             calculations:[],
-            limitTo: 10
+            limitTo: 10,
+            endpoint: "https://guarded-hamlet-96437.herokuapp.com/"
         }
 }
 
     // this.handleNameChange = this.handleNameChange.bind(this);
     
     componentDidMount () {
-        axios
-        .get(`${URL}/calculations`)
-        .then(response => {
-            console.log(response);
-            this.setState({calculations: response.data})
-          }) 
-          .catch (error => {
-            console.log('Error', error);
-          })
+        const { endpoint } = this.state;
+        const socket = socketIOClient(endpoint);
+        socket.on("FromAPI", data => this.setState({calculations: data }));
+        // axios
+        // .get(`${URL}/calculations`)
+        // .then(response => {
+        //     console.log(response);
+        //     this.setState({calculations: response.data})
+        //   }) 
+        //   .catch (error => {
+        //     console.log('Error', error);
+        //   })
     }
 
     onLoadMore () {
